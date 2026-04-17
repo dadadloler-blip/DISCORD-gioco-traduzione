@@ -54,10 +54,10 @@ async def gioco_traduzione():
         parola_detta_trascritta = riconoscitore.recognize_google(audio, language='en-US').lower().strip()
         print(f"\nHai detto: '{parola_detta_trascritta}'")
     except sr.UnknownValueError:
-        print("\nNon sono riuscito a capire cosa hai detto. C'era troppo rumore o non hai parlato?")
+        print("\nNon riesco a capire cosa dici")
         return
     except sr.RequestError as e:
-        print(f"\nErrore di connessione ai server Google: {e}")
+        print(f"\nErrore di connessione {e}")
         return
 
     if parola_detta_trascritta == parola_tradotta:
